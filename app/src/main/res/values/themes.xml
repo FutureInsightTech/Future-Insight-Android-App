@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.FutureInsight" parent="Base.Theme.FutureInsight" />
+    <style name="Theme.FutureInsight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FutureInsight.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.FutureInsight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
