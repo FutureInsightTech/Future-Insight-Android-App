@@ -11,4 +11,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="blogs" />
+    <string name="services" />
+    <string name= "menu_blogs">Blogs</string>
+    <string name= "menu_services">Services</string>
+
 </resources>

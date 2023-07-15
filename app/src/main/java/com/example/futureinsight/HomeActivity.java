@@ -1,6 +1,7 @@
 package com.example.futureinsight;
 
 import android.os.Bundle;
+import android.text.style.SuperscriptSpan;
 import android.view.View;
 import android.view.Menu;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,7 +17,8 @@ import com.example.futureinsight.databinding.ActivityHomeBinding;
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-private ActivityHomeBinding binding;
+    private ActivityHomeBinding binding;
+    private long pressTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +28,6 @@ private ActivityHomeBinding binding;
      setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarHome.toolbar);
-        binding.appBarHome.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -51,6 +46,18 @@ private ActivityHomeBinding binding;
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
+    }
+
+//    This is the logic for press back button
+    public void backbutton()
+    {
+        if(pressTime+2000>System.currentTimeMillis())
+        {
+            super.onBackPressed();
+            finish();
+        }
+        pressTime= System.currentTimeMillis();
+
     }
 
     @Override

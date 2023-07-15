@@ -1,2 +1,9 @@
-# Future-Insight-Android-App
-This is the android application for Future Insight
+# Future Insight Android Application
+
+This is the offical Application for Future Insight Technology. 
+
+# Features
+
+# Contributions
+
+# 
