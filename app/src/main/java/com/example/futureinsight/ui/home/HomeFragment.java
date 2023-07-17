@@ -25,13 +25,17 @@ private FragmentHomeBinding binding;
 
     binding = FragmentHomeBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
-
+//      web Site URL
         String future_insight_home= "https://future-insight.blog/";
+//       Web View Client
         final WebView homeWebview = binding.idWebViewHome;
+//        Progress bar
         final ProgressBar loadingPb = binding.PBLoading;
 
+//        Loading Url
         homeWebview.loadUrl(future_insight_home);
 
+//      logic for showing or not showing progress bar
         homeWebview.setWebViewClient(new WebViewClient(){
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -46,6 +50,7 @@ private FragmentHomeBinding binding;
             }
         });
 
+//        Local for Back button
         homeWebview.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keycode, KeyEvent event) {
