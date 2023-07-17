@@ -15,5 +15,6 @@
     <string name="services" />
     <string name= "menu_blogs">Blogs</string>
     <string name= "menu_services">Services</string>
+    <string name="futureinsightblog_gmail_com">futureinsightblog@gmail.com</string>
 
 </resources>
