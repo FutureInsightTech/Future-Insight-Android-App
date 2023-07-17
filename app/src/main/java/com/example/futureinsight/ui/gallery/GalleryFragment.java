@@ -64,7 +64,7 @@ private FragmentGalleryBinding binding;
                 return false;
             }
         });
-        
+
 
         return root;
     }
