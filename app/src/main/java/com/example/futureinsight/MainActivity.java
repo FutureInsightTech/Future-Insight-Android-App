@@ -18,10 +18,9 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i;
-                i = new Intent(MainActivity.this, HomeActivity.class);
-//                startActivities();
-//                finish();
+                Intent i = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(i);
+                finish();
             }
         },2000);
     }

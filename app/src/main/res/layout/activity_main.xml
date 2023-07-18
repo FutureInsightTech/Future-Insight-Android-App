@@ -11,7 +11,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/logo"
+        android:src="@drawable/futureinsightlogo"
         android:layout_marginTop="90dp"
         android:id="@+id/idTVlogo"
         />
