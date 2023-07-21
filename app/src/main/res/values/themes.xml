@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FutureInsight" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.FutureInsight" parent="Base.Theme.FutureInsight" />
+    <style name="Theme.FutureInsight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FutureInsight.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.FutureInsight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="Assent_color">
+        <item name="colorAccent">@color/future_insight</item>
+    </style>
+</resources>
