@@ -1,5 +1,3 @@
-# Future Insight Android Application
-
 <p align="center">
     <a herf="https://future-insight.blog/">
     <img src="/screenshots/futureinsightlogo.png" alt="Future Insight"  width="230px" height="230px">
@@ -7,11 +5,21 @@
   <br>
 </p>
 
+<h1 align="center">
+    Hi there
+    <img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" 
+         alt="Waving hand animated gif"
+         height="35"
+         width="35" />
+     Welcome to Future Insight Application
+</h1>
 
-<!-- ![Future Insight Logo](/screenshots/futureinsightlogo.png) -->
-
-
-![image](/screenshots/Future-Insight-Application.png)
+<div style="display: flex; justify-content: center;">
+  <div style="justify-content: center; align-items: center; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+    <img src="/screenshots/Future-Insight-Application.png" alt="Future Insight Preview" style="display: block; max-width: 100%; height: auto; border-radius: 10px;">
+  </div>
+</div>
+<br>
 
 ## Table of Contents
 
@@ -41,7 +49,7 @@ Welcome to the Future Insight Android Application! This application is an extens
 
 ## Installation
 
-1. Download the latest APK from the [Releases](https://github.com/future-insight/android-app/releases) section.
+1. Download the latest APK from the [Releases](https://github.com/rafay99-epic/Future-Insight-App/releases) section.
 2. Enable installation from unknown sources in your device settings if not already done.
 3. Open the APK file and follow the on-screen instructions to install the application.
 
@@ -73,7 +81,7 @@ We welcome contributions from the community to enhance the Future Insight Androi
 5. Submit a pull request to the `Development-Branch` branch of the Future Insight Android Application repository.
 
 ## License
-The Future Insight Android Application is released under the [MIT License](https://github.com/future-insight/android-app/blob/main/LICENSE). You are free to use, modify, and distribute this software. Attribution to Future Insight is appreciated but not required.
+The Future Insight Android Application is released under the [MIT License](/LICENSE). You are free to use, modify, and distribute this software. Attribution to Future Insight is appreciated but not required.
 
 ---
 
