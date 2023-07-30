@@ -17,12 +17,12 @@
         android:theme="@style/Theme.FutureInsight"
         tools:targetApi="31" >
         <activity
-            android:name=".HomeActivity"
+            android:name="com.futureinsight.futureinsight.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.FutureInsight.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.futureinsight.futureinsight.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar" >
             <intent-filter>
@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Utility.NetworkBroadcast"
+        <receiver android:name="com.futureinsight.futureinsight.Utility.NetworkBroadcast"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

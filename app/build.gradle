@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.futureinsight'
+    namespace 'com.org.futureinsight'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.futureinsight"
+        applicationId 'com.org.futureinsight'
         minSdk 26
         targetSdk 33
         versionCode 1

@@ -22,16 +22,6 @@ Write-Host @"
 Write-Host "=== System Check ==="
 Write-Host "Checking system status..."
 
-# Check if git is installed
-if (-not (Test-Path (Get-Command git -ErrorAction SilentlyContinue))) {
-    Write-Host "❌ Git is not installed. Please install Git to use this script."
-    exit 1
-}
-
-Write-Host "✅ Git is installed."
-
-Write-Host
-
 # Section: Commit Message
 Write-Host "=== Commit Message ==="
 
