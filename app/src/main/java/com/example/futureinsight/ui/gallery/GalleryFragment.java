@@ -30,6 +30,8 @@ private FragmentGalleryBinding binding;
         final WebView BlogWebView = binding.idWebViewBlog;
         String FutureInsightsBlogURL = "https://future-insight.blog/post/";
         final ProgressBar loadingPB = binding.PBLoading;
+    //        Enable Javascript
+        BlogWebView.getSettings().setJavaScriptEnabled(true);
 
         BlogWebView.loadUrl(FutureInsightsBlogURL);
         BlogWebView.setWebViewClient(new WebViewClient() {

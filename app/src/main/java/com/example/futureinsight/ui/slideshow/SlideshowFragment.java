@@ -1,6 +1,9 @@
 package com.example.futureinsight.ui.slideshow;
 
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -12,11 +15,12 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.futureinsight.Utility.NetworkBroadcast;
 import com.example.futureinsight.databinding.FragmentSlideshowBinding;
 
 public class SlideshowFragment extends Fragment {
-
-private FragmentSlideshowBinding binding;
+    private FragmentSlideshowBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -29,6 +33,9 @@ private FragmentSlideshowBinding binding;
         final WebView ServicesWebView = binding.WebViewServices;
         String FutureInsightSerciesURL = "https://future-insight.blog/services/";
         final ProgressBar loadingPb = binding.PBLoading;
+
+        //enable Javascript
+        ServicesWebView.getSettings().setJavaScriptEnabled(true);
 
         ServicesWebView.loadUrl(FutureInsightSerciesURL);
 

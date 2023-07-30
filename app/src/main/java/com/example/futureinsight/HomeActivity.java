@@ -1,9 +1,14 @@
 package com.example.futureinsight;
 
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.style.SuperscriptSpan;
 import android.view.View;
 import android.view.Menu;
+
+import com.example.futureinsight.Utility.NetworkBroadcast;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -16,6 +21,7 @@ import com.example.futureinsight.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private BroadcastReceiver broadcastReceiver;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
     private long pressTime;
@@ -39,6 +45,14 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+
+        //checking internet & Calling & Setting the broadcast receiver
+        broadcastReceiver = new NetworkBroadcast();
+        registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+
     }
 
 //    Setting Button in the UI and it is disable
@@ -67,4 +81,12 @@ public class HomeActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    //Destory Reciever to free resources allocated
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiver);
+    }
+
 }

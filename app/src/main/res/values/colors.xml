@@ -4,9 +4,4 @@
     <color name="white">#FFFFFFFF</color>
     <color name="future_insight">#da532c </color>
     <color name="transpant">#00FFFFFF</color>
-
-    <color name="colorOnPrimaryDemo">#FFF</color>
-    <color name="colorPrimaryDemo">#554911</color>
-    <color name="colorPrimaryLightDemo">#EEE3AB</color>
-    <color name="colorAccentDemo">#665815</color>
 </resources>
