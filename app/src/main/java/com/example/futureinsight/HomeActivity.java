@@ -59,7 +59,6 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
-
 //    Setting Button in the UI and it is disable
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

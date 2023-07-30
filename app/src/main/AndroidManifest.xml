@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/futureinsightlogo"
+        android:icon="@drawable/displayicon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/displayicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.FutureInsight"
         tools:targetApi="31" >
