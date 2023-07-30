@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -34,6 +35,8 @@ public class SlideshowFragment extends Fragment {
         String FutureInsightSerciesURL = "https://future-insight.blog/services/";
         final ProgressBar loadingPb = binding.PBLoading;
 
+        WebSettings webSettings = ServicesWebView.getSettings();
+
         //enable Javascript
         ServicesWebView.getSettings().setJavaScriptEnabled(true);
         ServicesWebView.getSettings().setDomStorageEnabled(true);
@@ -43,6 +46,17 @@ public class SlideshowFragment extends Fragment {
         ServicesWebView.getSettings().setDisplayZoomControls(false);
         ServicesWebView.getSettings().setSupportZoom(true);
         ServicesWebView.getSettings().setDefaultTextEncodingName("utf-8");
+
+        // Performace improvement settings
+
+        ServicesWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        ServicesWebView.getSettings().setGeolocationEnabled(true);
+        ServicesWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        ServicesWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setSavePassword(true);
+        webSettings.setSaveFormData(true);
+        webSettings.setEnableSmoothTransition(true);
 
         //loading URl into WebView
         ServicesWebView.loadUrl(FutureInsightSerciesURL);

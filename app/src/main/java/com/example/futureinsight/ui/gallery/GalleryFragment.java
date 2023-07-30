@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -35,6 +36,8 @@ private FragmentGalleryBinding binding;
         //Loading Progress Bar
         final ProgressBar loadingPB = binding.PBLoading;
 
+        WebSettings webSettings = BlogWebView.getSettings();
+
         //Enable Javascript & alot for the webview loading properties
         BlogWebView.getSettings().setJavaScriptEnabled(true);
         BlogWebView.getSettings().setDomStorageEnabled(true);
@@ -44,6 +47,20 @@ private FragmentGalleryBinding binding;
         BlogWebView.getSettings().setDisplayZoomControls(false);
         BlogWebView.getSettings().setSupportZoom(true);
         BlogWebView.getSettings().setDefaultTextEncodingName("utf-8");
+
+        //performace improvement settings
+        BlogWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        BlogWebView.getSettings().setGeolocationEnabled(true);
+        BlogWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        BlogWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setSavePassword(true);
+        webSettings.setSaveFormData(true);
+        webSettings.setEnableSmoothTransition(true);
+
+
+
+
 
 //      Loading URL into the Blog Post
         BlogWebView.loadUrl(FutureInsightsBlogURL);
