@@ -36,6 +36,16 @@ private FragmentHomeBinding binding;
         homeWebview.loadUrl(future_insight_home);
 //        Enable Javascript
         homeWebview.getSettings().setJavaScriptEnabled(true);
+        homeWebview.getSettings().setDomStorageEnabled(true);
+        homeWebview.getSettings().setLoadWithOverviewMode(true);
+        homeWebview.getSettings().setUseWideViewPort(true);
+        homeWebview.getSettings().setBuiltInZoomControls(true);
+        homeWebview.getSettings().setDisplayZoomControls(false);
+        homeWebview.getSettings().setSupportZoom(true);
+        homeWebview.getSettings().setDefaultTextEncodingName("utf-8");
+
+
+
 //      logic for showing or not showing progress bar
         homeWebview.setWebViewClient(new WebViewClient(){
             @Override

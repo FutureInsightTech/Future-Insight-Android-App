@@ -52,7 +52,7 @@
         android:textAllCaps="true"
         android:text="@string/retry"
         android:background="@drawable/button_shape"
-        android:textColor="@color/colorOnPrimaryDemo"
+        android:textColor="@color/white"
         />
 
 </LinearLayout>

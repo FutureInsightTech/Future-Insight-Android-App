@@ -36,7 +36,15 @@ public class SlideshowFragment extends Fragment {
 
         //enable Javascript
         ServicesWebView.getSettings().setJavaScriptEnabled(true);
+        ServicesWebView.getSettings().setDomStorageEnabled(true);
+        ServicesWebView.getSettings().setLoadWithOverviewMode(true);
+        ServicesWebView.getSettings().setUseWideViewPort(true);
+        ServicesWebView.getSettings().setBuiltInZoomControls(true);
+        ServicesWebView.getSettings().setDisplayZoomControls(false);
+        ServicesWebView.getSettings().setSupportZoom(true);
+        ServicesWebView.getSettings().setDefaultTextEncodingName("utf-8");
 
+        //loading URl into WebView
         ServicesWebView.loadUrl(FutureInsightSerciesURL);
 
         ServicesWebView.setWebViewClient(new WebViewClient() {

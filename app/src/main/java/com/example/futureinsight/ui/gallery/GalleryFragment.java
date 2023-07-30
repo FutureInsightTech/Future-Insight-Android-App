@@ -27,12 +27,25 @@ private FragmentGalleryBinding binding;
     binding = FragmentGalleryBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
 
+        //Loading web View
         final WebView BlogWebView = binding.idWebViewBlog;
+        // URL of the blog Page
         String FutureInsightsBlogURL = "https://future-insight.blog/post/";
-        final ProgressBar loadingPB = binding.PBLoading;
-    //        Enable Javascript
-        BlogWebView.getSettings().setJavaScriptEnabled(true);
 
+        //Loading Progress Bar
+        final ProgressBar loadingPB = binding.PBLoading;
+
+        //Enable Javascript & alot for the webview loading properties
+        BlogWebView.getSettings().setJavaScriptEnabled(true);
+        BlogWebView.getSettings().setDomStorageEnabled(true);
+        BlogWebView.getSettings().setLoadWithOverviewMode(true);
+        BlogWebView.getSettings().setUseWideViewPort(true);
+        BlogWebView.getSettings().setBuiltInZoomControls(true);
+        BlogWebView.getSettings().setDisplayZoomControls(false);
+        BlogWebView.getSettings().setSupportZoom(true);
+        BlogWebView.getSettings().setDefaultTextEncodingName("utf-8");
+
+//      Loading URL into the Blog Post
         BlogWebView.loadUrl(FutureInsightsBlogURL);
         BlogWebView.setWebViewClient(new WebViewClient() {
             @Override
