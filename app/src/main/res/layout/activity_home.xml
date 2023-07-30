@@ -26,6 +26,6 @@
         app:headerLayout="@layout/nav_header_home"
         app:menu="@menu/activity_main_drawer"
         app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@color/future_insight"
-        />
+        app:itemBackground="@drawable/nav_item_drawable"
+    />
 </androidx.drawerlayout.widget.DrawerLayout>
