@@ -1,22 +1,27 @@
 package com.example.futureinsight.ui.slideshow;
 
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.futureinsight.Utility.NetworkBroadcast;
 import com.example.futureinsight.databinding.FragmentSlideshowBinding;
 
 public class SlideshowFragment extends Fragment {
-
-private FragmentSlideshowBinding binding;
+    private FragmentSlideshowBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +35,30 @@ private FragmentSlideshowBinding binding;
         String FutureInsightSerciesURL = "https://future-insight.blog/services/";
         final ProgressBar loadingPb = binding.PBLoading;
 
+        WebSettings webSettings = ServicesWebView.getSettings();
+
+        //enable Javascript
+        ServicesWebView.getSettings().setJavaScriptEnabled(true);
+        ServicesWebView.getSettings().setDomStorageEnabled(true);
+        ServicesWebView.getSettings().setLoadWithOverviewMode(true);
+        ServicesWebView.getSettings().setUseWideViewPort(true);
+        ServicesWebView.getSettings().setBuiltInZoomControls(true);
+        ServicesWebView.getSettings().setDisplayZoomControls(false);
+        ServicesWebView.getSettings().setSupportZoom(true);
+        ServicesWebView.getSettings().setDefaultTextEncodingName("utf-8");
+
+        // Performace improvement settings
+
+        ServicesWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        ServicesWebView.getSettings().setGeolocationEnabled(true);
+        ServicesWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        ServicesWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setSavePassword(true);
+        webSettings.setSaveFormData(true);
+        webSettings.setEnableSmoothTransition(true);
+
+        //loading URl into WebView
         ServicesWebView.loadUrl(FutureInsightSerciesURL);
 
         ServicesWebView.setWebViewClient(new WebViewClient() {

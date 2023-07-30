@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -32,8 +33,32 @@ private FragmentHomeBinding binding;
 //        Progress bar
         final ProgressBar loadingPb = binding.PBLoading;
 
+        WebSettings webSettings = homeWebview.getSettings();
+
 //        Loading Url
         homeWebview.loadUrl(future_insight_home);
+
+        //        Enable Javascript
+        homeWebview.getSettings().setJavaScriptEnabled(true);
+        homeWebview.getSettings().setDomStorageEnabled(true);
+        homeWebview.getSettings().setLoadWithOverviewMode(true);
+        homeWebview.getSettings().setUseWideViewPort(true);
+        homeWebview.getSettings().setBuiltInZoomControls(true);
+        homeWebview.getSettings().setDisplayZoomControls(false);
+        homeWebview.getSettings().setSupportZoom(true);
+        homeWebview.getSettings().setDefaultTextEncodingName("utf-8");
+
+        //performace improvement settings
+        homeWebview.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        homeWebview.getSettings().setGeolocationEnabled(true);
+        homeWebview.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        homeWebview.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setSavePassword(true);
+        webSettings.setSaveFormData(true);
+        webSettings.setEnableSmoothTransition(true);
+
+
 
 //      logic for showing or not showing progress bar
         homeWebview.setWebViewClient(new WebViewClient(){
