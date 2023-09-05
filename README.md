@@ -1,3 +1,9 @@
+# Note: This Project is Archived Now
+- No further development will be carried out in this repository.
+- The project's codebase and version have been updated, and the application no longer relies on Flutter.
+- You can find the new version at this link: [New Version](https://github.com/FutureInsightTech/Flutter-Android-Application)
+
+
 <p align="center">
     <a herf="https://future-insight.blog/">
     <img src="/screenshots/futureinsightlogo.png" alt="Future Insight"  width="230px" height="230px">
