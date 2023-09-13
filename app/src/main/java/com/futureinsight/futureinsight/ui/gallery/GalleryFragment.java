@@ -1,5 +1,6 @@
 package com.futureinsight.futureinsight.ui.gallery;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -20,85 +21,86 @@ public class GalleryFragment extends Fragment {
 
 private FragmentGalleryBinding binding;
 
+    @SuppressLint("SetJavaScriptEnabled")
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+                             ViewGroup container, Bundle savedInstanceState) {
+        try {
 
-    binding = FragmentGalleryBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
+            binding = FragmentGalleryBinding.inflate(inflater, container, false);
+            View root = binding.getRoot();
 
-        //Loading web View
-        final WebView BlogWebView = binding.idWebViewBlog;
-        // URL of the blog Page
-        String FutureInsightsBlogURL = "https://future-insight.blog/post/";
+            //Loading web View
+            final WebView BlogWebView = binding.idWebViewBlog;
+            // URL of the blog Page
+            String FutureInsightsBlogURL = "https://future-insight.blog/post/";
 
-        //Loading Progress Bar
-        final ProgressBar loadingPB = binding.PBLoading;
+            //Loading Progress Bar
+            final ProgressBar loadingPB = binding.PBLoading;
 
-        WebSettings webSettings = BlogWebView.getSettings();
+            WebSettings webSettings = BlogWebView.getSettings();
 
-        //Enable Javascript & alot for the webview loading properties
-        BlogWebView.getSettings().setJavaScriptEnabled(true);
-        BlogWebView.getSettings().setDomStorageEnabled(true);
-        BlogWebView.getSettings().setLoadWithOverviewMode(true);
-        BlogWebView.getSettings().setUseWideViewPort(true);
-        BlogWebView.getSettings().setBuiltInZoomControls(true);
-        BlogWebView.getSettings().setDisplayZoomControls(false);
-        BlogWebView.getSettings().setSupportZoom(true);
-        BlogWebView.getSettings().setDefaultTextEncodingName("utf-8");
+            //Enable Javascript & alot for the webview loading properties
+            BlogWebView.getSettings().setJavaScriptEnabled(true);
+            BlogWebView.getSettings().setDomStorageEnabled(true);
+            BlogWebView.getSettings().setLoadWithOverviewMode(true);
+            BlogWebView.getSettings().setUseWideViewPort(true);
+            BlogWebView.getSettings().setBuiltInZoomControls(true);
+            BlogWebView.getSettings().setDisplayZoomControls(false);
+            BlogWebView.getSettings().setSupportZoom(true);
+            BlogWebView.getSettings().setDefaultTextEncodingName("utf-8");
 
-        //performace improvement settings
-        BlogWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-        BlogWebView.getSettings().setGeolocationEnabled(true);
-        BlogWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        BlogWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setSavePassword(true);
-        webSettings.setSaveFormData(true);
-        webSettings.setEnableSmoothTransition(true);
-
-
-
-
+            //performace improvement settings
+            BlogWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+            BlogWebView.getSettings().setGeolocationEnabled(true);
+            BlogWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            BlogWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            webSettings.setUseWideViewPort(true);
+            webSettings.setSavePassword(true);
+            webSettings.setSaveFormData(true);
+            webSettings.setEnableSmoothTransition(true);
 
 //      Loading URL into the Blog Post
-        BlogWebView.loadUrl(FutureInsightsBlogURL);
-        BlogWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                loadingPB.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                loadingPB.setVisibility(View.GONE);
-            }
-        });
-
-        BlogWebView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int keycode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN)
-                {
-                    switch (keycode)
-                    {
-                        case KeyEvent.KEYCODE_BACK:
-                            if (BlogWebView.canGoBack())
-                            {
-                                BlogWebView.goBack();
-                            }
-                            break;
-                    }
+            BlogWebView.loadUrl(FutureInsightsBlogURL);
+            BlogWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                    super.onPageStarted(view, url, favicon);
+                    loadingPB.setVisibility(View.VISIBLE);
                 }
-                return false;
-            }
-        });
 
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    loadingPB.setVisibility(View.GONE);
+                }
+            });
 
-        return root;
+            BlogWebView.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View view, int keycode, KeyEvent event) {
+                    if (event.getAction() == KeyEvent.ACTION_DOWN)
+                    {
+                        switch (keycode)
+                        {
+                            case KeyEvent.KEYCODE_BACK:
+                                if (BlogWebView.canGoBack())
+                                {
+                                    BlogWebView.goBack();
+                                }
+                                break;
+                        }
+                    }
+                    return false;
+                }
+            });
+
+            return root;
+
+        }catch(Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return  null;
     }
 
 @Override

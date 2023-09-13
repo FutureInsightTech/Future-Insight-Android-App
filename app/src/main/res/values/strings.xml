@@ -13,12 +13,15 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="blogs" />
     <string name="services" />
-    <string name= "menu_blogs">Blogs</string>
-    <string name= "menu_services">Services</string>
+    <string name="menu_blogs">Blogs</string>
+    <string name="menu_services">Services</string>
     <string name="futureinsightblog_gmail_com">futureinsightblog@gmail.com</string>
     <string name="oops">OOPS!</string>
     <string name="no_internet_connection">No Internet Connection</string>
     <string name="please_check_your_connection">Please check your connection</string>
     <string name="retry">Retry</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contact_us">Contact US</string>
 
 </resources>
